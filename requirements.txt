@@ -1,0 +1,9 @@
+nicegui
+pywebview
+PyGObject
+PyQt6
+PyQt6-WebEngine
+QtPy
+scikit-learn
+pandas
+numpy
