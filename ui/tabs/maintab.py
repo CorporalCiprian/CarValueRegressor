@@ -32,6 +32,9 @@ def main_page():
                     predict_tab()
 
 
+def run_app():
+    ui.run(native=True, window_size=(700, 650), title='Car Price Estimator')
+
 if __name__ in {'__main__', '__mp_main__'}:
     multiprocessing.freeze_support()
     ui.run(native=True, window_size=(700, 650), title='Car Value Regressor')
