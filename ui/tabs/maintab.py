@@ -7,6 +7,7 @@ if __name__ == '__main__':
 from nicegui import ui
 from ui.tabs.train import train_tab
 from ui.tabs.predict import predict_tab
+from ui.tabs.scrape import scraper_tab
 
 
 @ui.page('/')
@@ -24,12 +25,14 @@ def main_page():
             with ui.tabs().classes('w-full bg-gray-800') as tabs:
                 t1 = ui.tab('Train', icon='model_training')
                 t2 = ui.tab('Predict', icon='directions_car')
-
+                t3 = ui.tab('Scrape', icon='manage_search')
             with ui.tab_panels(tabs, value=t1).classes('w-full bg-gray-900'):
                 with ui.tab_panel(t1):
                     train_tab()
                 with ui.tab_panel(t2):
                     predict_tab()
+                with ui.tab_panel(t3):
+                    scraper_tab()
 
 
 def run_app():

@@ -30,6 +30,14 @@ def predict_tab():
         result = ui.label('').classes('text-2xl font-bold text-center text-green-400 mt-2')
 
         async def predict():
+            if not marca.value or not marca.value.strip():
+                ui.notify('Please enter the Brand (Marca).', type='warning', position='top')
+                return
+
+            if not model.value or not model.value.strip():
+                ui.notify('Please enter the Model.', type='warning', position='top')
+                return
+
             result.set_text('Predicting...')
             estimate_btn.props('loading')
 
