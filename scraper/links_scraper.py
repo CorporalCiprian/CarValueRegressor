@@ -4,17 +4,15 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from scraper.config import OLX, DATA_DIR, LINKS_FILE  # Using your variables
+from scraper.config import OLX, DATA_DIR, LINKS_FILE 
 
 def save_links(links):
-    # folder_path = os.path.join("..", "data")
     folder_path = DATA_DIR
 
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
         print(f"Directory {folder_path} was created.")
 
-    # file_path = os.path.join(folder_path, "links.json")
     file_path = LINKS_FILE
 
     with open(file_path, "w", encoding="utf-8") as f:
