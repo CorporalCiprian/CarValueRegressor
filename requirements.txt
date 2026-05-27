@@ -1,6 +1,6 @@
 nicegui
 pywebview
-PyGObject
+#PyGObject
 PyQt6
 PyQt6-WebEngine
 QtPy

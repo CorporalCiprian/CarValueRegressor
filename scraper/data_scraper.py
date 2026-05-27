@@ -27,10 +27,12 @@ def scrape_ad_details(driver, url):
         for attr in raw_attributes:
             if data['source'] == 'autovit':
                 try:
-                    key = attr.find_element(By.CSS_SELECTOR, "p[class*='e1nqkcyc9']").text.strip()
-                    val = attr.find_element(By.CSS_SELECTOR, "p[class*='e1nqkcyc11']").text.strip()
-                    if key:
-                        attributes_dict[key] = val
+                    p_tags = attr.find_elements(By.TAG_NAME, "p")
+                    if len(p_tags) >= 2:
+                        key = p_tags[0].text.strip()
+                        val = p_tags[1].text.strip()
+                        if key:
+                            attributes_dict[key] = val
                 except Exception:
                     continue
             else:

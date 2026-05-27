@@ -67,6 +67,11 @@ def train(json_path: str, model_path: str) -> dict:
 
     df = pd.DataFrame(flat_data)
 
+    coloane_necesare = ['Anul producției', 'An de fabricatie', 'Numar de portiere', 'Numar de usi', 'Rulaj', 'Putere']
+    for col in coloane_necesare:
+        if col not in df.columns:
+            df[col] = None
+
     df['price'] = df['price'].apply(lambda x: _clean_price(x, curs_euro))
     df['An'] = df['Anul producției'].combine_first(df['An de fabricatie'])
     df['Usi'] = df['Numar de portiere'].combine_first(df['Numar de usi'])
@@ -74,6 +79,9 @@ def train(json_path: str, model_path: str) -> dict:
     df['Rulaj'] = df['Rulaj'].apply(_extract_number)
     df['Putere'] = df['Putere'].apply(_extract_number)
 
+    for feature in FEATURES:
+        if feature not in df.columns:
+            df[feature] = None
     df_clean = df[FEATURES + ['price']].dropna(subset=['price'])
     df_clean = df_clean[(df_clean['price'] >= 1000) & (df_clean['price'] <= 200000)]
 

@@ -13,16 +13,16 @@ OLX = {
     "SEARCH_URL": "https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/?currency=EUR&page=",
 
     # Detail page selectors
-    "SELECTOR_TITLE": "h4.css-1l3a0i9",
+    "SELECTOR_TITLE": "h4.css-1eenwaq",
     "SELECTOR_PRICE": '[data-testid="ad-price-container"] h3',
-    "SELECTOR_ATTRIBUTES": "p.css-13x8d99",
+    "SELECTOR_ATTRIBUTES": "p.css-odhutu",
     "SELECTOR_DESCRIPTION": "div.css-19duwlz",
 }
 
 AUTOVIT = {
-    "SELECTOR_TITLE": "h1",
+    "SELECTOR_TITLE": "h1.offer-title",
     "SELECTOR_PRICE": "[data-testid='ad-price-container'] h3, [data-testid='ad-price'] h3, h3.offer-price__number, h3[class*='ooa-']",
-    "SELECTOR_ATTRIBUTES": "div[class$='e1nqkcyc6']",
+    "SELECTOR_ATTRIBUTES": "div[data-testid='detail']",
     "SELECTOR_DESCRIPTION": "div[data-testid='content-details-section-description']",
 }
 
